@@ -8,8 +8,7 @@
 | API group                             | A set of related API resources. For example, networking resources are usually located in the networking.k8s.io API group.                                  |
 | API resource                          | All Kubernetes objects, such as Pods, Deployments, and Services, are defined in the API as resources.                                                      |
 | API Server                            | Exposes the API on a secure port over HTTPS. Runs on the control plane.                                                                                    |
-| Cloud controller manager	            |Control plane service that integrates with the underlying cloud platform. For example, when creating a LoadBalancer Service, the cloud controller manager implements the logic to provision one of the underlying cloud’s internet-facing load balancers.
-|
+| Cloud controller manager	            |Control plane service that integrates with the underlying cloud platform. For example, when creating a LoadBalancer Service, the cloud controller manager implements the logic to provision one of the underlying cloud’s internet-facing load balancers.                                                                                                                 |
 | Cloud native                          |              |
 | Cluster                               |              |
 | Cluster store                         |              |
