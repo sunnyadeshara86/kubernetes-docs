@@ -42,3 +42,24 @@
 | Label selector                        |              |
 | Manifest file                         |              |
 | Microservices                         |              |
+| Namespace                             |              |
+| Node                                  |              |
+| Observed state                        |              |
+| Orchestrator                          |              |
+| Persistent Volume (PV)                |              |
+| Persistent Volume Claim (PVC)         |              |
+| Pod                                   |              |
+| RBAC                                  |              |
+| Reconciliation loop                   |              |
+| ReplicaSet                            |              |
+| REST                                  |              |
+| Secret                                |              |
+| Service                               |              |
+| Service mesh                          |              |
+| Sidecar                               |              |
+| StatefulSet                           |              |
+| Storage Class (SC)                    |              |
+| Volume                                |              |
+| WebAssembly (Wasm)                    |              |
+| Worker node                           |              |
+| YAML                                  |              |
