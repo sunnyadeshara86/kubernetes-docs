@@ -38,28 +38,28 @@
 | kubectl                               | Kubernetes command line tool. Sends commands to the API server and queries state via the API server.                                                               |
 | Kubelet                               | The main Kubernetes agent running on every cluster Node. It watches the API Server for new work assignments and maintains a reporting channel back.                |
 | Kube-proxy                            | Runs on every cluster node and implements low-level rules that handle traffic routing from Services to Pods. You send traffic to stable Service names, and kube-proxy makes sure the traffic reaches Pods.                                                                                                                                                                   |
-| Label                                 |              |
-| Label selector                        |              |
-| Manifest file                         |              |
-| Microservices                         |              |
-| Namespace                             |              |
-| Node                                  |              |
-| Observed state                        |              |
-| Orchestrator                          |              |
-| Persistent Volume (PV)                |              |
-| Persistent Volume Claim (PVC)         |              |
-| Pod                                   |              |
-| RBAC                                  |              |
-| Reconciliation loop                   |              |
-| ReplicaSet                            |              |
-| REST                                  |              |
-| Secret                                |              |
-| Service                               |              |
-| Service mesh                          |              |
-| Sidecar                               |              |
-| StatefulSet                           |              |
-| Storage Class (SC)                    |              |
-| Volume                                |              |
-| WebAssembly (Wasm)                    |              |
-| Worker node                           |              |
-| YAML                                  |              |
+| Label                                 | Metadata applied to objects for grouping. Works with label selectors to match Pods with higher-level controllers. For example, Services send traffic to Pods based on sets of matching labels.                                                                                                                                                                                  |
+| Label selector                        | Used to identify Pods to perform actions on. For example, when a Deployment performs a rolling update, it knows which Pods to update based on its label selector – only Pods with labels matching the Deployment’s label selector will be replaced and updated.                                                                                                                 |
+| Manifest file                         | YAML file that holds the configuration of one or more Kubernetes objects. For example, a Service manifest file is typically a YAML file that holds the configuration of a Service object. When you post a manifest file to the API Server, its configuration is deployed to the cluster.                                                                            |
+| Microservices                         | A design pattern for modern applications. Application features are broken into their own small applications (microservices/containers) and communicate via APIs. They work together to form a useful application.                                                                                                                                                             |
+| Namespace                             | A way to partition a single Kubernetes cluster into multiple virtual clusters. Good for applying different quotas and access control policies on a single cluster. Not suitable for strong workload isolation.                                                                                                                                                                  |
+| Node                                  | Also known as worker node. The nodes in a cluster that run user applications. Runs the kubelet process, a container runtime, and kube-proxy.                       |
+| Observed state                        | Also known as current state or actual state. The most up-to-date view of the cluster and running applications. Controllers are always working to make observed state match desired state.                                                                                                                                                                                   |
+| Orchestrator                          | A piece of software that deploys and manages apps. Modern apps are made from many small microservices that work together to form a useful application. Kubernetes orchestrates/manages these, keeps them healthy, scales them up and down, and more… Kubernetes is the de facto orchestrator of microservices apps based on containers.                                        |
+| Persistent Volume (PV)                | Kubernetes object used to map storage volumes on a cluster. External storage resources must be mapped to PVs before they can be used by applications.              |
+| Persistent Volume Claim (PVC)         | Like a ticket/voucher that allows an app to use a Persistent Volume (PV). Without a valid PVC, an app cannot use a PV. Combined with StorageClasses for dynamic volume creation.                                                                                                                                                                                             |
+| Pod                                   | Smallest unit of scheduling on Kubernetes. Every container running on Kubernetes must run inside a Pod. The Pod provides a shared execution environment – IP address, volumes, shared memory etc.                                                                                                                                                                         |
+| RBAC                                  | Role-based access control. Authorization module that determines whether authenticated users can perform actions against cluster resources.                         |
+| Reconciliation loop                   | A controller process watching the state of the cluster via the API Server, ensuring observed state matches desired state. Most controllers, such as the Deployment controller, run as a reconciliation loop.                                                                                                                                                                    |
+| ReplicaSet                            | Runs as a controller and performs self-healing and scaling. Used by Deployments.                                                                                   |
+| REST                                  | REpresentational State Transfer. The most common architecture for creating web-based APIs. Uses the common HTTP methods (GET, POST, PUT, PATCH, DELETE) to manipulate and store objects.                                                                                                                                                                                |
+| Secret                                | Like a ConfigMap for sensitive configuration data. A way to store sensitive data outside of a container image and have it inserted into a container at runtime.    |
+| Service                               | Capital “S”. Kubernetes object for providing network access to apps running in Pods. By placing a Service in front of a set of Pods, the Pods can fail, scale up and down, and be replaced without the network endpoint for accessing them changing. Can integrate with cloud platforms and provision internet-facing load balancers.                                         |
+| Service mesh                          | Infrastructure software that enables features such as encryption of Pod-to-Pod traffic, enhanced network telemetry, and advanced routing. Common service meshes used with Kubernetes include Consul, Istio, Linkerd, and Open Service Mesh. Others also exist.                                                                                                               |
+| Sidecar                               | A special container that runs alongside and augments a main app container. Service meshes are often implemented as sidecar containers that are injected into Pods and add network functionality.                                                                                                                                                                               |
+| StatefulSet                           | Controller that deploys and manages stateful Pods. Similar to a Deployment, but for stateful applications.                                                         |
+| Storage Class (SC)                    | Way to create different storage tiers/classes on a cluster. You may have an SC called “fast” that creates NVMe-based storage, and another SC called “medium-three-site” that creates slower storage replicated across three sites.                                                                                                                                             |
+| Volume                                | Generic term for persistent storage.                                                                                                                               |
+| WebAssembly (Wasm)                    | Secure sandboxed virtual machine format for executing apps.                                                                                                        |
+| Worker node                           | A cluster node for running user applications. Sometimes called a “Node” or “worker”.                                                                               |
+| YAML                                  | Yet Another Markup Language. The configuration language you normally write Kubernetes configuration files in. It’s a superset of JSON.                             |
